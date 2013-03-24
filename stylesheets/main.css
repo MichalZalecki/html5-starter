@@ -90,26 +90,6 @@ textarea {
 }
 
 /* ==========================================================================
-   Author's custom styles
-   ========================================================================== */
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* ==========================================================================
    Helper classes
    ========================================================================== */
 
@@ -121,8 +101,6 @@ textarea {
     background-color: transparent;
     border: 0;
     overflow: hidden;
-    /* IE 6/7 fallback */
-    *text-indent: -9999px;
 }
 
 .ir:before {
@@ -181,33 +159,12 @@ textarea {
 
 /*
  * Clearfix: contain floats
- *
- * For modern browsers
- * 1. The space content is one way to avoid an Opera bug when the
- *    `contenteditable` attribute is included anywhere else in the document.
- *    Otherwise it causes space to appear at the top and bottom of elements
- *    that receive the `clearfix` class.
- * 2. The use of `table` rather than `block` is only necessary if using
- *    `:before` to contain the top-margins of child elements.
  */
 
-.clearfix:before,
 .clearfix:after {
-    content: " "; /* 1 */
-    display: table; /* 2 */
-}
-
-.clearfix:after {
-    clear: both;
-}
-
-/*
- * For IE 6/7 only
- * Include this rule to trigger hasLayout and contain floats.
- */
-
-.clearfix {
-    *zoom: 1;
+  content: "";
+  display: table;
+  clear: both;
 }
 
 /* ==========================================================================
@@ -283,7 +240,7 @@ textarea {
     }
 
     @page {
-        margin: 0.5cm;
+        margin: 1.27cm;
     }
 
     p,
