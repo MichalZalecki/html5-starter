@@ -1,14 +1,30 @@
-/*
- * HTML5 Boilerplate
- *
- * What follows is the result of much research on cross-browser styling.
- * Credit left inline and big thanks to Nicolas Gallagher, Jonathan Neal,
- * Kroc Camen, and the H5BP dev community and team.
+/**
+ * HTML5 Starter
  */
 
 /* ==========================================================================
-   Base styles: opinionated defaults
+   Mixins and Functions
    ========================================================================== */
+
+// Working in ems is annoying. Think in pixels by using this handy function, emCalc(#px)
+@function emCalc($pxWidth) {
+  @return $pxWidth / $em-base * 1em;
+}
+
+// Creating rems and pixels
+@function remCalc($pxWidth) {
+  @return $pxWidth / $em-base * 1rem;
+}
+
+/* ==========================================================================
+   HTML5 Starter default styling
+   ========================================================================== */
+
+html {
+    font-size: $base-font-size;
+    line-height: 1.5;
+    @if $display-baseline { background: url('#{$images-dir}bl.png'); }
+}
 
 html,
 button,
@@ -18,24 +34,99 @@ textarea {
     color: #222;
 }
 
-body {
+/* Em Baseline Generator: http://joshnh.com/tools/em-baseline-generator.html */
+
+h1, .alpha,
+h2, .beta,
+h3, .gamma,
+h4, .delta,
+h5, .epsilon,
+h6, .zeta {
+    font-weight: bold;
+    margin: 0;
+}
+
+h1, .alpha {
+    font-size: 3em;
+    line-height: 1;
+    margin-bottom: 0.5em;
+}
+
+h2, .beta {
+    font-size: 2.25em;
+    line-height: 1.3333333333333333;
+    margin-bottom: 0.6666666666666666em;
+}
+
+h3, .gamma {
+    font-size: 1.5em;
+    line-height: 1;
+    margin-bottom: 1em;
+}
+
+h4, .delta {
+    font-size: 1.3125em;
+    line-height: 1.1428571428571428;
+    margin-bottom: 1.1428571428571428em;
+}
+
+h5, .epsilon {
+    font-size: 1.125em;
+    line-height: 1.3333333333333333;
+    margin-bottom: 1.3333333333333333em;
+}
+
+h6, .zeta {
     font-size: 1em;
-    line-height: 1.4;
+    line-height: 1.5;
+    margin-bottom: 1.5em;
+}
+
+p,
+blockquote,
+pre {
+    font-size: 1em;
+    margin: 0 0 1.5em;
+    line-height: 1.5;
+    -webkit-hyphens: auto;
+       -moz-hyphens: auto;
+        -ms-hyphens: auto;
+            hyphens: auto;
+}
+
+dl,
+ol,
+ul {
+    font-size: 1em;
+    margin: 0 0 1.5em;
+    padding: 0;
+}
+
+dd,
+dt,
+li,
+{
+    line-height: 1.5;
+    margin: 0;
+}
+
+table{
+    margin: 0 0 1.5em;
 }
 
 /*
  * Remove text-shadow in selection highlight: h5bp.com/i
- * These selection declarations have to be separate.
+ * These selection rule sets have to be separate.
  * Customize the background color to match your design.
  */
 
 ::-moz-selection {
-    background: #b3d4fc;
+    background: #fe6724;
     text-shadow: none;
 }
 
 ::selection {
-    background: #b3d4fc;
+    background: #fe6724;
     text-shadow: none;
 }
 
@@ -94,23 +185,6 @@ textarea {
    ========================================================================== */
 
 /*
- * Image replacement
- */
-
-.ir {
-    background-color: transparent;
-    border: 0;
-    overflow: hidden;
-}
-
-.ir:before {
-    content: "";
-    display: block;
-    width: 0;
-    height: 150%;
-}
-
-/*
  * Hide from both screenreaders and browsers: h5bp.com/u
  */
 
@@ -159,9 +233,40 @@ textarea {
 
 /*
  * Clearfix: contain floats
+ *
+ * For modern browsers
+ * 1. The space content is one way to avoid an Opera bug when the
+ *    `contenteditable` attribute is included anywhere else in the document.
+ *    Otherwise it causes space to appear at the top and bottom of elements
+ *    that receive the `clearfix` class.
+ * 2. The use of `table` rather than `block` is only necessary if using
+ *    `:before` to contain the top-margins of child elements.
  */
 
+.clearfix:before,
 .clearfix:after {
+    content: " "; /* 1 */
+    display: table; /* 2 */
+}
+
+.clearfix:after {
+    clear: both;
+}
+
+/*
+ * For IE 6/7 only
+ * Include this rule to trigger hasLayout and contain floats.
+ */
+
+.clearfix {
+    *zoom: 1;
+}
+
+/*
+ * I'd say for the most part these days (if you only need IE 8 and up) this is fine: http://css-tricks.com/snippets/css/clear-fix/
+ */
+
+.group:after {
   content: "";
   display: table;
   clear: both;
@@ -169,11 +274,12 @@ textarea {
 
 /* ==========================================================================
    EXAMPLE Media Queries for Responsive Design.
-   Theses examples override the primary ('mobile first') styles.
+   These examples override the primary ('mobile first') styles.
    Modify as content requires.
    ========================================================================== */
 
-@media only screen and (min-width: 35em) {
+@media only screen and (min-width: 48em) {
+	/* 48em = 768px if body{ font-size: 100% } */
     /* Style adjustments for viewports that meet the condition */
 }
 
@@ -240,7 +346,7 @@ textarea {
     }
 
     @page {
-        margin: 1.27cm;
+        margin: 0.5cm;
     }
 
     p,
