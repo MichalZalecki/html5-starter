@@ -1,5 +1,5 @@
 /**
- * HTML5 Starter v1.1.1
+ * HTML5 Starter v1.1.2
  */
 
 /* ==========================================================================
@@ -23,7 +23,15 @@
 html {
     font-size: $base-font-size;
     line-height: 1.5;
+    font-family: "Droid Sans", sans-serif;
     @if $display-baseline { background: url('#{$images-dir}bl.png'); }
+}
+
+code,
+kbd,
+pre,
+samp {
+    font-family: "Droid Sans Mono", sans-serif;
 }
 
 html,
@@ -112,6 +120,12 @@ li,
 
 table{
     margin: 0 0 1.5em;
+    td,
+    th,
+    caption{
+        padding: 0;
+        line-height: 1.5;
+    }
 }
 
 /*
@@ -121,12 +135,12 @@ table{
  */
 
 ::-moz-selection {
-    background: #fe6724;
+    background: $selection-color;
     text-shadow: none;
 }
 
 ::selection {
-    background: #fe6724;
+    background: $selection-color;
     text-shadow: none;
 }
 
@@ -192,8 +206,6 @@ textarea {
     background-color: transparent;
     border: 0;
     overflow: hidden;
-    /* IE 6/7 fallback */
-    *text-indent: -9999px;
 }
 
 .ir:before {
