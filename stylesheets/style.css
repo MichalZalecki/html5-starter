@@ -256,7 +256,7 @@ figure {
  */
 /* line 259, ../sass/_normalize.scss */
 fieldset {
-  border: 1px solid silver;
+  border: 1px solid #c0c0c0;
   margin: 0 2px;
   padding: 0.35em 0.625em 0.75em;
 }
@@ -554,7 +554,7 @@ hr {
   display: block;
   height: 1px;
   border: 0;
-  border-top: 1px solid #cccccc;
+  border-top: 1px solid #ccc;
   margin: 1em 0;
   padding: 0;
 }
@@ -600,9 +600,29 @@ textarea {
    Helper classes
    ========================================================================== */
 /*
- * Hide from both screenreaders and browsers: h5bp.com/u
+ * Image replacement
  */
 /* line 191, ../sass/_h5s.scss */
+.ir {
+  background-color: transparent;
+  border: 0;
+  overflow: hidden;
+  /* IE 6/7 fallback */
+  *text-indent: -9999px;
+}
+
+/* line 199, ../sass/_h5s.scss */
+.ir:before {
+  content: "";
+  display: block;
+  width: 0;
+  height: 150%;
+}
+
+/*
+ * Hide from both screenreaders and browsers: h5bp.com/u
+ */
+/* line 210, ../sass/_h5s.scss */
 .hidden {
   display: none !important;
   visibility: hidden;
@@ -611,7 +631,7 @@ textarea {
 /*
  * Hide only visually, but have it available for screenreaders: h5bp.com/v
  */
-/* line 200, ../sass/_h5s.scss */
+/* line 219, ../sass/_h5s.scss */
 .visuallyhidden {
   border: 0;
   clip: rect(0 0 0 0);
@@ -627,7 +647,7 @@ textarea {
  * Extends the .visuallyhidden class to allow the element to be focusable
  * when navigated to via the keyboard: h5bp.com/p
  */
-/* line 217, ../sass/_h5s.scss */
+/* line 236, ../sass/_h5s.scss */
 .visuallyhidden.focusable:active,
 .visuallyhidden.focusable:focus {
   clip: auto;
@@ -641,49 +661,15 @@ textarea {
 /*
  * Hide visually and from screenreaders, but maintain layout
  */
-/* line 230, ../sass/_h5s.scss */
+/* line 249, ../sass/_h5s.scss */
 .invisible {
   visibility: hidden;
 }
 
 /*
- * Clearfix: contain floats
- *
- * For modern browsers
- * 1. The space content is one way to avoid an Opera bug when the
- *    `contenteditable` attribute is included anywhere else in the document.
- *    Otherwise it causes space to appear at the top and bottom of elements
- *    that receive the `clearfix` class.
- * 2. The use of `table` rather than `block` is only necessary if using
- *    `:before` to contain the top-margins of child elements.
+ * .clearfix replacement: I'd say for the most part these days (if you only need IE 8 and up) this is fine: http://css-tricks.com/snippets/css/clear-fix/
  */
-/* line 247, ../sass/_h5s.scss */
-.clearfix:before,
-.clearfix:after {
-  content: " ";
-  /* 1 */
-  display: table;
-  /* 2 */
-}
-
-/* line 252, ../sass/_h5s.scss */
-.clearfix:after {
-  clear: both;
-}
-
-/*
- * For IE 6/7 only
- * Include this rule to trigger hasLayout and contain floats.
- */
-/* line 261, ../sass/_h5s.scss */
-.clearfix {
-  *zoom: 1;
-}
-
-/*
- * I'd say for the most part these days (if you only need IE 8 and up) this is fine: http://css-tricks.com/snippets/css/clear-fix/
- */
-/* line 269, ../sass/_h5s.scss */
+/* line 257, ../sass/_h5s.scss */
 .group:after {
   content: "";
   display: table;
@@ -707,27 +693,27 @@ textarea {
    Inlined to avoid required HTTP connection: h5bp.com/r
    ========================================================================== */
 @media print {
-  /* line 299, ../sass/_h5s.scss */
+  /* line 287, ../sass/_h5s.scss */
   * {
     background: transparent !important;
-    color: black !important;
+    color: #000 !important;
     /* Black prints faster: h5bp.com/s */
     box-shadow: none !important;
     text-shadow: none !important;
   }
 
-  /* line 307, ../sass/_h5s.scss */
+  /* line 295, ../sass/_h5s.scss */
   a,
   a:visited {
     text-decoration: underline;
   }
 
-  /* line 311, ../sass/_h5s.scss */
+  /* line 299, ../sass/_h5s.scss */
   a[href]:after {
     content: " (" attr(href) ")";
   }
 
-  /* line 315, ../sass/_h5s.scss */
+  /* line 303, ../sass/_h5s.scss */
   abbr[title]:after {
     content: " (" attr(title) ")";
   }
@@ -735,33 +721,33 @@ textarea {
   /*
    * Don't show links for images, or javascript/internal links
    */
-  /* line 325, ../sass/_h5s.scss */
+  /* line 313, ../sass/_h5s.scss */
   .ir a:after,
   a[href^="javascript:"]:after,
   a[href^="#"]:after {
     content: "";
   }
 
-  /* line 330, ../sass/_h5s.scss */
+  /* line 318, ../sass/_h5s.scss */
   pre,
   blockquote {
-    border: 1px solid #999999;
+    border: 1px solid #999;
     page-break-inside: avoid;
   }
 
-  /* line 335, ../sass/_h5s.scss */
+  /* line 323, ../sass/_h5s.scss */
   thead {
     display: table-header-group;
     /* h5bp.com/t */
   }
 
-  /* line 340, ../sass/_h5s.scss */
+  /* line 328, ../sass/_h5s.scss */
   tr,
   img {
     page-break-inside: avoid;
   }
 
-  /* line 344, ../sass/_h5s.scss */
+  /* line 332, ../sass/_h5s.scss */
   img {
     max-width: 100% !important;
   }
@@ -770,7 +756,7 @@ textarea {
     margin: 0.5cm;
 }
 
-  /* line 354, ../sass/_h5s.scss */
+  /* line 342, ../sass/_h5s.scss */
   p,
   h2,
   h3 {
@@ -778,7 +764,7 @@ textarea {
     widows: 3;
   }
 
-  /* line 360, ../sass/_h5s.scss */
+  /* line 348, ../sass/_h5s.scss */
   h2,
   h3 {
     page-break-after: avoid;
