@@ -424,15 +424,29 @@ table {
 /* ==========================================================================
    HTML5 Starter default styling
    ========================================================================== */
-/* line 23, ../sass/_h5s.scss */
+/* line 27, ../sass/_h5s.scss */
+*,
+*:before,
+*:after {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+/* line 33, ../sass/_h5s.scss */
 html {
   font-size: 100%;
   line-height: 1.5;
   font-family: "Droid Sans", sans-serif;
-  background: url("../images/bl.png");
 }
 
-/* line 33, ../sass/_h5s.scss */
+/* line 39, ../sass/_h5s.scss */
+body {
+  background-color: #f2f2f2;
+  background-image: url("../images/bl.png");
+}
+
+/* line 47, ../sass/_h5s.scss */
 code,
 kbd,
 pre,
@@ -440,17 +454,17 @@ samp {
   font-family: "Droid Sans Mono", sans-serif;
 }
 
-/* line 41, ../sass/_h5s.scss */
+/* line 55, ../sass/_h5s.scss */
 html,
 button,
 input,
 select,
 textarea {
-  color: #222;
+  color: #222222;
 }
 
 /* Em Baseline Generator: http://joshnh.com/tools/em-baseline-generator.html */
-/* line 52, ../sass/_h5s.scss */
+/* line 66, ../sass/_h5s.scss */
 h1, .alpha,
 h2, .beta,
 h3, .gamma,
@@ -461,49 +475,49 @@ h6, .zeta {
   margin: 0;
 }
 
-/* line 57, ../sass/_h5s.scss */
+/* line 71, ../sass/_h5s.scss */
 h1, .alpha {
   font-size: 3em;
   line-height: 1;
   margin-bottom: 0.5em;
 }
 
-/* line 63, ../sass/_h5s.scss */
+/* line 77, ../sass/_h5s.scss */
 h2, .beta {
   font-size: 2.25em;
   line-height: 1.3333333333333333;
   margin-bottom: 0.6666666666666666em;
 }
 
-/* line 69, ../sass/_h5s.scss */
+/* line 83, ../sass/_h5s.scss */
 h3, .gamma {
   font-size: 1.5em;
   line-height: 1;
   margin-bottom: 1em;
 }
 
-/* line 75, ../sass/_h5s.scss */
+/* line 89, ../sass/_h5s.scss */
 h4, .delta {
   font-size: 1.3125em;
   line-height: 1.1428571428571428;
   margin-bottom: 1.1428571428571428em;
 }
 
-/* line 81, ../sass/_h5s.scss */
+/* line 95, ../sass/_h5s.scss */
 h5, .epsilon {
   font-size: 1.125em;
   line-height: 1.3333333333333333;
   margin-bottom: 1.3333333333333333em;
 }
 
-/* line 87, ../sass/_h5s.scss */
+/* line 101, ../sass/_h5s.scss */
 h6, .zeta {
   font-size: 1em;
   line-height: 1.5;
   margin-bottom: 1.5em;
 }
 
-/* line 95, ../sass/_h5s.scss */
+/* line 109, ../sass/_h5s.scss */
 p,
 blockquote,
 pre {
@@ -516,7 +530,7 @@ pre {
   hyphens: auto;
 }
 
-/* line 107, ../sass/_h5s.scss */
+/* line 121, ../sass/_h5s.scss */
 dl,
 ol,
 ul {
@@ -525,7 +539,7 @@ ul {
   padding: 0;
 }
 
-/* line 116, ../sass/_h5s.scss */
+/* line 130, ../sass/_h5s.scss */
 dd,
 dt,
 li {
@@ -533,11 +547,11 @@ li {
   margin: 0;
 }
 
-/* line 121, ../sass/_h5s.scss */
+/* line 135, ../sass/_h5s.scss */
 table {
   margin: 0 0 1.5em;
 }
-/* line 125, ../sass/_h5s.scss */
+/* line 139, ../sass/_h5s.scss */
 table td,
 table th,
 table caption {
@@ -545,27 +559,39 @@ table caption {
   line-height: 1.5;
 }
 
+/* line 145, ../sass/_h5s.scss */
+a {
+  color: #e44d26;
+  text-decoration: none;
+}
+/* line 148, ../sass/_h5s.scss */
+a:hover {
+  color: #a93315;
+}
+
 /*
  * Remove text-shadow in selection highlight: h5bp.com/i
  * These selection rule sets have to be separate.
  * Customize the background color to match your design.
  */
-/* line 137, ../sass/_h5s.scss */
+/* line 164, ../sass/_h5s.scss */
 ::-moz-selection {
-  background: #fe6724;
+  background: #f16529;
+  color: #222222;
   text-shadow: none;
 }
 
-/* line 142, ../sass/_h5s.scss */
+/* line 170, ../sass/_h5s.scss */
 ::selection {
-  background: #fe6724;
+  background: #f16529;
+  color: #222222;
   text-shadow: none;
 }
 
 /*
  * A better looking default horizontal rule
  */
-/* line 151, ../sass/_h5s.scss */
+/* line 180, ../sass/_h5s.scss */
 hr {
   display: block;
   height: 1px;
@@ -578,7 +604,7 @@ hr {
 /*
  * Remove the gap between images and the bottom of their containers: h5bp.com/i/440
  */
-/* line 164, ../sass/_h5s.scss */
+/* line 193, ../sass/_h5s.scss */
 img {
   vertical-align: middle;
 }
@@ -586,7 +612,7 @@ img {
 /*
  * Remove default fieldset styles.
  */
-/* line 172, ../sass/_h5s.scss */
+/* line 201, ../sass/_h5s.scss */
 fieldset {
   border: 0;
   margin: 0;
@@ -596,7 +622,7 @@ fieldset {
 /*
  * Allow only vertical resizing of textareas.
  */
-/* line 182, ../sass/_h5s.scss */
+/* line 211, ../sass/_h5s.scss */
 textarea {
   resize: vertical;
 }
@@ -604,7 +630,7 @@ textarea {
 /* ==========================================================================
    Chrome Frame prompt
    ========================================================================== */
-/* line 190, ../sass/_h5s.scss */
+/* line 219, ../sass/_h5s.scss */
 .chromeframe {
   margin: 0.2em 0;
   background: #ccc;
@@ -618,14 +644,14 @@ textarea {
 /*
  * Image replacement
  */
-/* line 205, ../sass/_h5s.scss */
+/* line 234, ../sass/_h5s.scss */
 .ir {
   background-color: transparent;
   border: 0;
   overflow: hidden;
 }
 
-/* line 211, ../sass/_h5s.scss */
+/* line 240, ../sass/_h5s.scss */
 .ir:before {
   content: "";
   display: block;
@@ -636,7 +662,7 @@ textarea {
 /*
  * Hide from both screenreaders and browsers: h5bp.com/u
  */
-/* line 222, ../sass/_h5s.scss */
+/* line 251, ../sass/_h5s.scss */
 .hidden {
   display: none !important;
   visibility: hidden;
@@ -645,7 +671,7 @@ textarea {
 /*
  * Hide only visually, but have it available for screenreaders: h5bp.com/v
  */
-/* line 231, ../sass/_h5s.scss */
+/* line 260, ../sass/_h5s.scss */
 .visuallyhidden {
   border: 0;
   clip: rect(0 0 0 0);
@@ -661,7 +687,7 @@ textarea {
  * Extends the .visuallyhidden class to allow the element to be focusable
  * when navigated to via the keyboard: h5bp.com/p
  */
-/* line 248, ../sass/_h5s.scss */
+/* line 277, ../sass/_h5s.scss */
 .visuallyhidden.focusable:active,
 .visuallyhidden.focusable:focus {
   clip: auto;
@@ -675,7 +701,7 @@ textarea {
 /*
  * Hide visually and from screenreaders, but maintain layout
  */
-/* line 261, ../sass/_h5s.scss */
+/* line 290, ../sass/_h5s.scss */
 .invisible {
   visibility: hidden;
 }
@@ -683,7 +709,7 @@ textarea {
 /*
  * Clearfix replacement: I'd say for the most part these days (if you only need IE 8 and up) this is fine: http://css-tricks.com/snippets/css/clear-fix/
  */
-/* line 269, ../sass/_h5s.scss */
+/* line 298, ../sass/_h5s.scss */
 .group:after {
   content: "";
   display: table;
@@ -707,7 +733,7 @@ textarea {
    Inlined to avoid required HTTP connection: h5bp.com/r
    ========================================================================== */
 @media print {
-  /* line 299, ../sass/_h5s.scss */
+  /* line 328, ../sass/_h5s.scss */
   * {
     background: transparent !important;
     color: #000 !important;
@@ -716,18 +742,18 @@ textarea {
     text-shadow: none !important;
   }
 
-  /* line 307, ../sass/_h5s.scss */
+  /* line 336, ../sass/_h5s.scss */
   a,
   a:visited {
     text-decoration: underline;
   }
 
-  /* line 311, ../sass/_h5s.scss */
+  /* line 340, ../sass/_h5s.scss */
   a[href]:after {
     content: " (" attr(href) ")";
   }
 
-  /* line 315, ../sass/_h5s.scss */
+  /* line 344, ../sass/_h5s.scss */
   abbr[title]:after {
     content: " (" attr(title) ")";
   }
@@ -735,33 +761,33 @@ textarea {
   /*
    * Don't show links for images, or javascript/internal links
    */
-  /* line 325, ../sass/_h5s.scss */
+  /* line 354, ../sass/_h5s.scss */
   .ir a:after,
   a[href^="javascript:"]:after,
   a[href^="#"]:after {
     content: "";
   }
 
-  /* line 330, ../sass/_h5s.scss */
+  /* line 359, ../sass/_h5s.scss */
   pre,
   blockquote {
     border: 1px solid #999;
     page-break-inside: avoid;
   }
 
-  /* line 335, ../sass/_h5s.scss */
+  /* line 364, ../sass/_h5s.scss */
   thead {
     display: table-header-group;
     /* h5bp.com/t */
   }
 
-  /* line 340, ../sass/_h5s.scss */
+  /* line 369, ../sass/_h5s.scss */
   tr,
   img {
     page-break-inside: avoid;
   }
 
-  /* line 344, ../sass/_h5s.scss */
+  /* line 373, ../sass/_h5s.scss */
   img {
     max-width: 100% !important;
   }
@@ -770,7 +796,7 @@ textarea {
     margin: 0.5cm;
 }
 
-  /* line 354, ../sass/_h5s.scss */
+  /* line 383, ../sass/_h5s.scss */
   p,
   h2,
   h3 {
@@ -778,7 +804,7 @@ textarea {
     widows: 3;
   }
 
-  /* line 360, ../sass/_h5s.scss */
+  /* line 389, ../sass/_h5s.scss */
   h2,
   h3 {
     page-break-after: avoid;

@@ -8,4 +8,13 @@ $display-baseline: true;
 $base-font-size: 100%;
 $em-base: 16px; //16px is default size
 
-$selection-color: #fe6724;
+$primary-color: #E44D26;
+
+$body-font-color: #222;
+$body-bg-color: #F2F2F2;
+
+$selection-bg-color: #F16529;
+$selection-font-color: $body-font-color;
+
+$font-family-html: "Droid Sans", sans-serif;
+$font-family-code: "Droid Sans Mono", sans-serif;

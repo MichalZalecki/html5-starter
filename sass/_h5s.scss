@@ -20,18 +20,32 @@
    HTML5 Starter default styling
    ========================================================================== */
 
+//Box Model
+
+*,
+*:before,
+*:after {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
 html {
     font-size: $base-font-size;
     line-height: 1.5;
-    font-family: "Droid Sans", sans-serif;
-    @if $display-baseline { background: url('#{$images-dir}bl.png'); }
+    font-family: $font-family-html;
+}
+
+body{
+    background-color: $body-bg-color;
+    @if $display-baseline { background-image: url('#{$images-dir}bl.png'); }
 }
 
 code,
 kbd,
 pre,
 samp {
-    font-family: "Droid Sans Mono", sans-serif;
+    font-family: $font-family-code;
 }
 
 html,
@@ -39,7 +53,7 @@ button,
 input,
 select,
 textarea {
-    color: #222;
+    color: $body-font-color;
 }
 
 /* Em Baseline Generator: http://joshnh.com/tools/em-baseline-generator.html */
@@ -128,6 +142,19 @@ table{
     }
 }
 
+a{
+    color: $primary-color;
+    text-decoration: none;
+    &:hover{
+        @if lightness($body-bg-color) > 50%{
+            color: darken($primary-color, 15%); 
+        } @else {
+            color: lighten($primary-color, 15%);
+        }
+        
+    }
+}
+
 /*
  * Remove text-shadow in selection highlight: h5bp.com/i
  * These selection rule sets have to be separate.
@@ -135,12 +162,14 @@ table{
  */
 
 ::-moz-selection {
-    background: $selection-color;
+    background: $selection-bg-color;
+    color: $selection-font-color;
     text-shadow: none;
 }
 
 ::selection {
-    background: $selection-color;
+    background: $selection-bg-color;
+    color: $selection-font-color;
     text-shadow: none;
 }
 
